@@ -141,3 +141,14 @@ nums = [2, 7, 11, 15], target = 9
 
 // Output:
 [0, 1] // because nums[0] + nums[1] === 9
+
+Code 21: To find the largest pair of the 2 elements using indexing with unsorted elements
+```
+function largestPairSumofTwo(numbers){
+    const num = numbers.sort((a, b) => b - a);
+    console.log(num)
+    return num[0] + num[1];
+}
+const result = largestPairSumofTwo([9,7,8,4,5,6,1,2,3])
+console.log(result)
+```
