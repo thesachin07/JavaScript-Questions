@@ -182,3 +182,27 @@ function missingElement(){
 }
 missingElement()
 ```
+24. Find the missing no. in an array
+```
+function missing(arr) {
+    var x = 0;
+    for (var i = 0; i < arr.length; i++) {
+        x = x + 1;
+        if (arr[i] != x) {
+            return(x); //9
+        }
+    }
+}
+missing([1, 2, 3, 4, 5, 6, 7, 8, 10])
+-------------------------------------------
+```
+```
+function missing(arr) {
+    for (var i = 0, x=1; i < arr.length; x++,i++) {
+        if (arr[i] != x) { //index value comparing with pointer
+            return x; //9
+        }
+    }
+}
+console.log(missing([1, 2, 3, 4, 5, 6, 7, 8, 10]))
+```
