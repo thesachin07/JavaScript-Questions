@@ -165,3 +165,20 @@ var arr = [0, 1]
 }
 console.log(listFibonacci(4))
 ```
+23. Finding a missing elements in an array and then add with existing elements. (-1 means if elements not found then it will return always -1 as per rule)
+```
+function missingElement(){
+  var a = [1,2,5]
+  var missing = [];
+  for (var i = 1; i <= 6; i++) 
+   {
+    if (a.indexOf(i) == -1) 
+     {
+       missing.push(i); 
+     }
+   }
+ console.log(missing) //missing array
+ console.log(a.concat(missing).sort()); //actual+missing elements
+}
+missingElement()
+```
