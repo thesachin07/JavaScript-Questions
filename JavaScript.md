@@ -153,3 +153,15 @@ function largestPairSumofTwo(num){
 const result = largestPairSumofTwo([1,2,3,4,5,6,7,8,9])
 console.log(result)
 ```
+
+22. Fibonacci Series (0,1,1,2,3,5,8,13....) where keeping in array
+ ```
+function listFibonacci(n) {
+var arr = [0, 1]
+  for (var  i = 1; i < n; i++) 
+    arr.push(arr[i] + arr[i - 1])
+
+  return arr
+}
+console.log(listFibonacci(4))
+```
