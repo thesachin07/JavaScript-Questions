@@ -222,3 +222,14 @@ console.log(missing([1, 2, 3, 4, 5, 6, 7, 8, 10]))
 ```
 output : xyz
 ```
+26. Write a sum function and use apply to sum numbers from an array.
+```
+function sum(...args){
+ return args.reduce((acc, curr) => acc+curr, 0)
+ }
+const arr = [1,2,3,4,5]
+
+const result = sum.apply(null, arr)
+console.log(result)
+OUTPUT: 15
+```
