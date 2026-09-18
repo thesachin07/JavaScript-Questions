@@ -233,3 +233,18 @@ const result = sum.apply(null, arr)
 console.log(result)
 OUTPUT: 15
 ```
+27. Create a logger function and use bind to create logInfo and logError with fixed prefixes.
+```
+function logger (prefix, msg){
+    console.log(`${prefix}, ${msg}`)
+}
+const logInfo =  logger.bind(null, 'INFO')
+const logError = logger.bind(null, 'ERROR');
+logInfo()
+logInfo('HII')
+logError('jiji')
+
+OUTPUT: INFO, undefined
+INFO, HII
+ERROR, jiji
+```
