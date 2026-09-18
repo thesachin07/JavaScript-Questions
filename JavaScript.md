@@ -206,3 +206,19 @@ function missing(arr) {
 }
 console.log(missing([1, 2, 3, 4, 5, 6, 7, 8, 10]))
 ```
+25. Create a person object with name and a greet method. Use call to greet as another person.
+```
+ const person = {
+     name : 'Rahul',
+  greet: function fn (){
+         console.log(this.name)
+     }
+ }
+ const person2 = {
+     name : 'xyz'
+ }
+ person.greet.call(person2)
+```
+```
+output : xyz
+```
