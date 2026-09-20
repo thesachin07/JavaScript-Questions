@@ -248,3 +248,12 @@ OUTPUT: INFO, undefined
 INFO, HII
 ERROR, jiji
 ```
+28. How to empty an array in javascript?
+   ```
+  1. array=[]
+  2. array.length=0
+  3. array.splice(0, arr.length)
+  4. while(array.length){
+    array.pop()
+    }
+```
