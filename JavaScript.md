@@ -153,3 +153,184 @@ function largestPairSumofTwo(num){
 const result = largestPairSumofTwo([1,2,3,4,5,6,7,8,9])
 console.log(result)
 ```
+
+
+22. Find largest number in the array 
+```
+ function hi(arr){
+ let arr2 = Math.max(...arr)
+ console.log(arr2)
+ }
+
+ const arr = [6,7,4,2,6,9]
+ hi(arr)
+ ```
+```
+ function hi(arr){
+     arr.sort((a, b) => a-b)
+     console.log(arr)
+
+     let arr2 = arr[arr.length-1]
+     console.log(`largest no. is: ${arr2}`)
+ }
+ const arr = [6,7,4,2,6,9]
+ hi(arr)
+```
+```
+function hi(arr){
+    let temp = 0
+    for(let i=0; i<arr.length; i++){
+        if(arr[i] > temp){
+            temp = arr[i]
+        }        
+    }
+    return temp;
+}
+const arr = [6,7,4,2,6,9]
+ console.log(hi(arr))
+ ```
+
+ 23. Filter even number from the array 
+```
+ const arr = [1, 2, 3, 4, 5, 6, 7, 8]
+let arr2 = []
+for(let i=0; i<arr.length; i++){
+ if(arr[i]%2 ==0){
+    arr2.push(arr[i])
+ }
+}
+console.log(arr2)
+```
+```
+ let arr2 =arr.filter( num => num%2==0)
+ console.log(arr2)
+```
+
+24. Find Sum of Array ?
+```
+const arr = [10, 20, 30, 40]
+const hi = arr.reduce((acc, value)=> acc+value)
+console.log(hi)
+```
+
+25. Find total sum of array
+```
+const arr = [10, 20, 30, 40]
+// const hi = arr.reduce((acc, value)=> acc+value)
+// console.log(hi)
+let total = 0
+for(let i= 0; i<arr.length; i++){
+ total += arr[i]
+}
+console.log(total)
+```
+```
+const arr = [10, 20, 30, 40]
+ const hi = arr.reduce((acc, value)=> acc+value)
+ console.log(hi)
+```
+
+26. Fibonacci Series (0,1,1,2,3,5,8,13....) where keeping in array
+ ```
+function listFibonacci(n) {
+var arr = [0, 1]
+  for (var  i = 1; i < n; i++) 
+    arr.push(arr[i] + arr[i - 1])
+
+  return arr
+}
+console.log(listFibonacci(4))
+```
+27. Finding a missing elements in an array and then add with existing elements. (-1 means if elements not found then it will return always -1 as per rule)
+```
+function missingElement(){
+  var a = [1,2,5]
+  var missing = [];
+  for (var i = 1; i <= 6; i++) 
+   {
+    if (a.indexOf(i) == -1) 
+     {
+       missing.push(i); 
+     }
+   }
+ console.log(missing) //missing array
+ console.log(a.concat(missing).sort()); //actual+missing elements
+}
+missingElement()
+```
+28. Find the missing no. in an array
+```
+function missing(arr) {
+    var x = 0;
+    for (var i = 0; i < arr.length; i++) {
+        x = x + 1;
+        if (arr[i] != x) {
+            return(x); //9
+        }
+    }
+}
+missing([1, 2, 3, 4, 5, 6, 7, 8, 10])
+-------------------------------------------
+```
+```
+function missing(arr) {
+    for (var i = 0, x=1; i < arr.length; x++,i++) {
+        if (arr[i] != x) { //index value comparing with pointer
+            return x; //9
+        }
+    }
+}
+console.log(missing([1, 2, 3, 4, 5, 6, 7, 8, 10]))
+```
+29. Create a person object with name and a greet method. Use call to greet as another person.
+```
+ const person = {
+     name : 'Rahul',
+  greet: function fn (){
+         console.log(this.name)
+     }
+ }
+ const person2 = {
+     name : 'xyz'
+ }
+ person.greet.call(person2)
+```
+```
+output : xyz
+```
+30. Write a sum function and use apply to sum numbers from an array.
+```
+function sum(...args){
+ return args.reduce((acc, curr) => acc+curr, 0)
+ }
+const arr = [1,2,3,4,5]
+
+const result = sum.apply(null, arr)
+console.log(result)
+OUTPUT: 15
+```
+31. Create a logger function and use bind to create logInfo and logError with fixed prefixes.
+```
+function logger (prefix, msg){
+    console.log(`${prefix}, ${msg}`)
+}
+const logInfo =  logger.bind(null, 'INFO')
+const logError = logger.bind(null, 'ERROR');
+logInfo()
+logInfo('HII')
+logError('jiji')
+
+OUTPUT: INFO, undefined
+INFO, HII
+ERROR, jiji
+```
+32. How to empty an array in javascript?
+   ```
+  1. array=[]
+  2. array.length=0
+  3. array.splice(0, arr.length)
+  4. while(array.length){
+    array.pop()
+    }
+```
+>>>>>>> b817646b25bc9aa04b2b33fa325c4d78c30f43c4
