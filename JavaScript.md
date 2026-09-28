@@ -216,8 +216,6 @@ console.log(hi)
 25. Find total sum of array
 ```
 const arr = [10, 20, 30, 40]
-// const hi = arr.reduce((acc, value)=> acc+value)
-// console.log(hi)
 let total = 0
 for(let i= 0; i<arr.length; i++){
  total += arr[i]
@@ -333,4 +331,12 @@ ERROR, jiji
     array.pop()
     }
 ```
->>>>>>> b817646b25bc9aa04b2b33fa325c4d78c30f43c4
+
+33. Find specific item in the  array 
+```
+const arr = [15, 25, 35, 45, 55]
+const arr2 = arr.find(num => num>30)
+console.log(arr2)
+console.log(arr === arr2)
+```
+
