@@ -339,4 +339,9 @@ const arr2 = arr.find(num => num>30)
 console.log(arr2)
 console.log(arr === arr2)
 ```
-
+34. How Remove the first element from an array in JavaScript?
+    ```
+let arr = [5, 6, 7];
+arr = arr.slice(1); 
+console.log(arr);
+```
