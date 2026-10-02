@@ -339,4 +339,22 @@ const arr2 = arr.find(num => num>30)
 console.log(arr2)
 console.log(arr === arr2)
 ```
+34. How Remove the first element from an array in JavaScript?
+    ```
+let arr = [5, 6, 7];
+arr = arr.slice(1); 
+console.log(arr);
+```
 
+35.Write a Program to find a sum of an array?
+```
+function sumArray(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+console.log(sumArray([15, 6, 10, 2]));
+```
