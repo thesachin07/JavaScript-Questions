@@ -220,7 +220,16 @@ var longestConsecutive = function(nums) {
     return maxLength;
 };
 ```
- 
+ 6. Given an integer array arr and a mapping function fn, return a new array with a transformation applied to each element.
+```
+var map = function(arr, fn) {
+    const res = [];
+    for (let i = 0; i < arr.length; i++) {
+        res.push(fn(arr[i], i));
+    }
+    return res;
+};
+```
 
  
 
