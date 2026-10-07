@@ -166,4 +166,62 @@ var productExceptSelf = function(nums) {
     return result;
 };
 ```
+###  Longest Consecutive Sequence
+5. Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+   You must write an algorithm that runs in O(n) time.
+
+   Approach- 1:
+```
+     var longestConsecutive = function(nums) {
+    if (nums.length === 0) return 0;
+
+    nums.sort((a, b) => a - b);
+
+    let maxLength = 1;
+    let currentLength = 1;
+
+    for (let i = 0; i < nums.length - 1; i++) {
+        if (nums[i] === nums[i + 1]) {
+            continue;
+        }
+
+        if (nums[i + 1] - nums[i] === 1) {
+            currentLength++;
+        } else {
+            maxLength = Math.max(maxLength, currentLength);
+            currentLength = 1;
+        }
+    }
+    return Math.max(maxLength, currentLength) }
+```
+Approach - 2 :
+```
+var longestConsecutive = function(nums) {
+    if (nums.length === 0) return 0;
+
+    const numSet = new Set(nums);
+    let maxLength = 0;
+
+    for (let num of numSet) {
+
+        if (!numSet.has(num - 1)) {
+            let currentNum = num;
+            let currentLength = 1;
+
+            while (numSet.has(currentNum + 1)) {
+                currentNum += 1;
+                currentLength += 1;
+            }
+
+            maxLength = Math.max(maxLength, currentLength);
+        }
+    }
+
+    return maxLength;
+};
+```
+ 
+
+ 
+
 
