@@ -340,7 +340,7 @@ console.log(arr2)
 console.log(arr === arr2)
 ```
 34. How Remove the first element from an array in JavaScript?
-    ```
+   ```
 let arr = [5, 6, 7];
 arr = arr.slice(1); 
 console.log(arr);
@@ -358,3 +358,31 @@ function sumArray(arr) {
 
 console.log(sumArray([15, 6, 10, 2]));
 ```
+36. Write a function that takes a string as input and returns an object containing the frequency (count) of each character present in the string
+```
+function hi(str){
+    const count= {}
+    for(let char of str){
+         if(count[char]){
+             count[char] += 1
+         }else{
+             count[char] = 1
+        }
+    }
+    return count
+}
+let str = "users"
+console.log(hi(str))
+```
+Another short hand way to write a code 
+```
+function hi(str){
+    const count= {}
+    for(let char of str){
+        count[char] = (count[char] || 0) + 1
+    }
+    return count
+}
+let str = "users"
+console.log(hi(str))
+```  
