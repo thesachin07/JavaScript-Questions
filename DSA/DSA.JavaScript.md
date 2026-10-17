@@ -255,6 +255,45 @@ var twoSum = function(numbers, target) {
     }
 };
 ```
+ Container With Most Water
 
+ 8. You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
+Find two lines that together with the x-axis form a container, such that the container contains the most water.
+Return the maximum amount of water a container can store.
+Notice that you may not slant the container.
 
+Brute Force Approach
+```
+function maxArea(arr){
+   let width
+   let maxWater = 0
+   
+    for(let i=0; i<arr.length; i++){
+        for(let j = i+1; j<arr.length; j++){
+            width = j-i
+          let  height = Math.min(arr[i], arr[j])
+            let area = width * height
+           maxWater =  Math.max(maxWater, area)
+        }
+    }
+return maxWater
+}
+```
+Optimal Approach (Two Pointer)
+```
+function maxArea(height){
+  let width = 0
+  let maxWater = 0
+  let left = 0
+  let right = height.length-1
+  while(left < right){
+    width = right-left
+    const h = Math.min(height[left], height[right])
+    const area = width * h
+    maxWater = Math.max(maxWater, area)
 
+   height[left] < height[right]? left++ : right--
+  }
+  return maxWater
+}
+```
