@@ -297,3 +297,59 @@ function maxArea(height){
   return maxWater
 }
 ```
+### Trapping Rain Water
+
+9. Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
+
+Brute force
+```
+var trap = function(height) {
+    let water = 0;
+    const n = height.length;
+
+    for (let i = 0; i < n; i++) {
+        let leftMax = 0, rightMax = 0;
+
+        for (let j = 0; j <= i; j++) {
+            leftMax = Math.max(leftMax, height[j]);
+        }
+
+        for (let j = i; j < n; j++) {
+            rightMax = Math.max(rightMax, height[j]);
+        }
+
+        water += Math.min(leftMax, rightMax) - height[i];
+    }
+
+    return water;
+};
+```
+Optimal Approach
+```
+
+var trap = function(height) {
+    let left = 0, right = height.length - 1;
+    let leftMax = 0, rightMax = 0;
+    let water = 0;
+
+    while (left < right) {
+        if (height[left] < height[right]) {
+            if (height[left] >= leftMax) {
+                leftMax = height[left];
+            } else {
+                water += leftMax - height[left];
+            }
+            left++;
+        } else {
+            if (height[right] >= rightMax) {
+                rightMax = height[right];
+            } else {
+                water += rightMax - height[right];
+            }
+            right--;
+        }
+    }
+
+    return water;
+};
+```
