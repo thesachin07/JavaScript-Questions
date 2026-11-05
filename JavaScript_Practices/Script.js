@@ -14,9 +14,9 @@
 //     }
 // }
 
-let n = 10
-let Multiples = 3;
-for (let i = 1; i <= n; i++) {
-    let Mul= Multiples * i;
-    console.log(Mul);
-}
+// let n = 10
+// let Multiples = 3;
+// for (let i = 1; i <= n; i++) {
+//     let Mul= Multiples * i;
+//     console.log(Mul);
+// }
