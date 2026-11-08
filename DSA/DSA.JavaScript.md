@@ -355,7 +355,7 @@ var trap = function(height) {
 ```
 
 ### Reverse a words in a string
-## 9. Given an input string s, reverse the order of the words.
+ 9. Given an input string s, reverse the order of the words.
 A word is defined as a sequence of non-space characters. The words in s will be separated by at least one space.
 Return a string of the words in reverse order concatenated by a single space.
 Note that s may contain leading or trailing spaces or multiple spaces between two words. The returned string should only have a single space separating the words. Do not include any extra spaces.
@@ -363,5 +363,44 @@ Note that s may contain leading or trailing spaces or multiple spaces between tw
 var reverseWords = function(s) {
    let result = s.trim().split(/\s+/).reverse().join(' ')
     return result;
+};
+```
+### Move Zeroes
+ 10. Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+Note that you must do this in-place without making a copy of the array.
+
+Brute force Approach is:-
+```
+var moveZeroes = function(nums) {
+    let temp = []
+    for(let i =0; i<nums.length; i++){
+        if(nums[i] !== 0 ){
+            temp.push(nums[i])
+        }
+    }
+
+    for(let i = 0; i<temp.length; i++){
+        nums[i] = temp[i]
+    }
+
+    for(let i = temp.length; i<nums.length; i++){
+        nums[i] = 0;
+    }
+};
+```
+Optimal Approach is:- 
+```
+var moveZeroes = function(nums) {
+    let lastNonZeroFoundAt = 0;
+  
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== 0) {
+            let temp = nums[lastNonZeroFoundAt];
+            nums[lastNonZeroFoundAt] = nums[i];
+            nums[i] = temp;
+            
+            lastNonZeroFoundAt++;
+        }
+    }
 };
 ```
