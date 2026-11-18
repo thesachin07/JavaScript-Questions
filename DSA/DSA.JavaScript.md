@@ -445,3 +445,45 @@ var singleNonDuplicate = function(nums) {
     return nums[left];
 };
 ```
+
+### Subarray Sum Equals K
+13. Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
+A subarray is a contiguous non-empty sequence of elements within an array.
+
+Brute Force Approach
+```
+var subarraySum = function(nums, k) {
+    let count = 0
+    for(let i= 0; i<nums.length; i++){
+        let sum = 0
+        for(let j =i; j<nums.length; j++){
+ sum += nums[j]
+ if(sum === k) count++
+        }
+    }
+ return count
+};
+```
+
+Optimal Approach
+```
+var subarraySum = function(nums, k) {
+    let count = 0;
+    let currentSum = 0;
+    const prefixMap = new Map();
+   
+    prefixMap.set(0, 1);
+    
+    for (let i = 0; i < nums.length; i++) {
+        currentSum += nums[i];
+     
+        if (prefixMap.has(currentSum - k)) {
+            count += prefixMap.get(currentSum - k);
+        }
+   
+        prefixMap.set(currentSum, (prefixMap.get(currentSum) || 0) + 1);
+    }
+    
+    return count;
+};
+```
